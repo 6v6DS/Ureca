@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 속성</title>
+
+    
+     <style>
+        /* <!-- li 요소를 가로로 나란히 배치하기 --> */
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            /* block 을 사용하는 이유는 블록 레벨 요소의 성격을 가지면서 가로로 배치하기 위함함 */
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            /* 세로 중앙에 배치하기기 */
+            line-height: 40px;
+            /* 가로로 중앙에 배치하기기 */
+            text-align: center;
+            margin: 10px;
+            border: 1px solid black;
+        }
+     </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
