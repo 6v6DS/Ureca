@@ -17,15 +17,7 @@
             height: 100vh;
         }
 
-        .box1 {
-            width: 570px;
-            background-color: white;
-            display: flex;
-            border: 1px solid black;
-            margin: 20px;
-        }
-
-        .box2 {
+        .box{
             width: 570px;
             background-color: white;
             display: flex;
@@ -49,23 +41,24 @@
         }
 
         @media screen and (min-width:0px) and (max-width: 768px) {
-            .box1 {
-                display: flex;
-                position: relative;
-                width: 300px;
-                height: 500px;
-            }
-            .box2 {
-                display: flex;
-                position: relative;
+            .box {
                 width: 300px;
                 height: 500px;
             }
             .container {
                 display: flex;
                 flex-direction: column;
-                /* width:320px; */
+                width:320px;
                 margin: 50px auto;
+            }
+            img{
+                width: 300px;
+                height: 50%;
+            }
+            h2 {
+                display: flex;
+
+                margin-top: 200px;
             }
 
         }
@@ -74,11 +67,11 @@
 
 <body>
     <div class="container">
-        <div class="box1">
+        <div class="box">
             <img src="../image-set/11/images/1.jpg" alt="시계사진">
             <h2>일 분 전만큼 먼 시간은 없다. <span><br>- Jim Bishop</span></h2>
         </div>
-        <div class="box2">
+        <div class="box">
             <img src="../image-set/11/images/2.jpg" alt="책사진">
             <h2>낡은 옷은 그냥 입고 새 책을 사라. <span><br>- Austin Phelps</span></h2>
         </div>
