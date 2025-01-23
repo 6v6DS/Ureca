@@ -1,0 +1,59 @@
+.merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    margin-left: 20px;
+}
+
+
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+    margin: 10px;
+}
+li a {
+    padding: 5px 20px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer li::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: #d3d5d7;
+    margin: 0 10px;
+}
+
+#header{
+    background-color: darkblue;
+    width: 600px;
+    height: 100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    transition: 0.3s;
+}
+
+img{
+
+    float:left;
+    border-radius: 15px;
+}
+
+.word{
+    margin-left: 100px;
+}
+

@@ -71,5 +71,12 @@ body {
     border: none;
 }
 /* 마지막 fieldset의 스타일 */
-
+#signup fieldset:last-of-type {
+    border:none;
+    margin-bottom: 0;
+}
 /* #singup 하위에 있는 버튼에 마우스 올렸을 때 스타일 */
+#signup button:hover {
+    background-color: #222;
+    color: #fff;
+}
