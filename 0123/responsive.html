@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reponsive 실습</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            /* 계산할 때 너비 자체가 포함됨 */
+            box-sizing: border-box;
+        }
+        .container{
+            width: 1000px;
+            display: grid;
+            grid-template-rows: repeat(3, 250px);
+            /* grid-template-columns: repeat(3, 1fr); */
+            grid-template-areas: 
+            "box1 box2 box2"
+            "box1 box3 box4"
+            "box5 box5 box5";
+            gap: 10px;
+            margin: 10px auto;
+        }
+        .box1{
+            background-color: palevioletred;
+            border-radius: 15px;
+            grid-area: box1;
+        }
+        .box2{
+            background-color: orange;
+            border-radius: 15px;
+            grid-area: box2;
+        }
+        .box3{
+            background-color: purple;
+            border-radius: 15px;
+            grid-area: box3;
+        }
+        .box4{
+            background-color: greenyellow;
+            border-radius: 15px;
+            grid-area: box4;
+        }
+        .box5{
+            background-color: rgb(100, 95, 252);
+            border-radius: 15px;
+            grid-area: box5;
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 768px) {
+            .container{
+                width: 720px;
+                display: block;
+                
+            }
+            .container * {
+                height: 200px;
+                margin: 10px auto;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .container{
+                width: 300px;
+                display: block;
+            }
+            .container * {
+                height: 200px;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+</body>
+</html>
