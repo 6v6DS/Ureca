@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Programming</h1>
+        <p>공부할 주제를 기록해 보세요</p>
+        <p>주제 <input type="text" id="arr"> <input type="submit" id="submit" value="추가"></p>
+        <hr>
+        <div>
+            <ul id="newarr">
+                <li>추가</li>
+                <li>추가</li>
+                <li>추가</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const submit = document.querySelector('#submit');
+            const newarr = document.querySelector("#newarr");
+       
+            submit.addEventListener('click', (e) => {
+                // console.log(textContent);
+                const arr = document.getElementById('arr').value;
+                console.log(arr);
+                // newarr.classList.add('arr');
+                document.getElementById("newarr").innerText = arr
+            });
+        });
+    </script>
+</body>
+</html>

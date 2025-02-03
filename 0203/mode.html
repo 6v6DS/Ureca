@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mode change</title>
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            border: 1px dotted black;
+            width: 500px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            margin: 50px;
+        }
+
+        .wrapper {
+            margin-left: 10px;
+        }
+
+        button {
+            padding: 10px;
+            position: absolute;
+            right: 3%;
+            cursor: pointer;
+        }
+
+        .white {
+            color: black;
+            background-color: white;
+
+        }
+
+        .dark {
+            color: white;
+            background-color: black;
+
+            .container {
+                border: 1px dotted white;
+                width: 500px;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                margin: 50px;
+            }
+
+            .wrapper {
+                margin-left: 10px;
+            }
+            #proceed{
+                color: white;
+                background-color: black;
+                border: 1px solid white;
+            }
+        }
+    </style>
+</head>
+
+<body id="dark">
+    <div>
+        <button id="proceed">다크 모드</button>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Web Programming</h1>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let proceed = document.querySelector('#proceed');
+            let dark = document.querySelector('#dark');
+
+            proceed.addEventListener('click', (e) => {
+                dark.classList.toggle('dark', e.target.checked);
+                dark.classList.toggle('white', !e.target.checked);
+                if (proceed.innerText === '다크 모드') {
+                    //textContent도 사용 가능
+                    proceed.innerText = '라이트 모드';
+                } else proceed.innerText = '다크 모드';
+                dark.disabled = !e.target.checked;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
