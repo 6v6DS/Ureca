@@ -172,6 +172,9 @@ function playGame(choice: string){
 
 
 // 버튼 요소들을 가져와 한 번에 이벤트 리스너 등록
+// document.querySelectorAll(".btn").forEach((btn) => {
+//     btn.addEventListener("click", () => playGame(btn.id));
+// });
 
 
 // 가위바위보 게임 로직
