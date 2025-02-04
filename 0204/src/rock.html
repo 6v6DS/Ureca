@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+      .btn{
+        display: block;
+        margin: 0 auto 20px;
+        padding: 5px 10px;
+        background-color: plum;
+        color: blueviolet;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 19px;
+        width: 100px;
+      }
+      #view {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        padding: 20px;
+        width: 700px;
+        height: 120px;
+        background-color: lightgray;
+      }
+      #result{
+        color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+      }
+      i{
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>가위바위보</h1>
+    <!-- <button id="btn">번호 생성</button> -->
+    <div id="view">
+        <button class="btn" id="btn1"><i class="fa-regular fa-hand-back-fist"></i></button>
+        <button class="btn" id="btn2"><i class="fa-regular fa-hand-peace"></i></button>
+        <button class="btn" id="btn3"><i class="fa-regular fa-hand"></i></button>
+    </div>
+    <div id="result">
+
+    </div>
+    
+    <script src="./rock.js"></script>
+  </body>
+</html>
