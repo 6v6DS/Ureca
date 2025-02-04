@@ -9,14 +9,11 @@ void    : 리턴 값이 없는 경우
 
 인자명? : 선택적 인자 ==> 값이 안 들어와도 됨.
 */
-
-function printMsg(message:string, isCritical?:boolean) :void{
+function printMsg(message, isCritical) {
     console.log(message);
-
-    if(isCritical){
+    if (isCritical) {
         alert(message);
     }
 }
-
 printMsg('hello', false);
 printMsg('경고', true);
