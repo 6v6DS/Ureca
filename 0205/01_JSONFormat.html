@@ -48,6 +48,17 @@
 
         console.log('array json:', JSON.stringify(todos, null, 2));
 
+        /*
+        Storage: 브라우저에 데이터를 저장하는 공간
+        localStorage: 제거 명령이 있기 전까지는 계속 유지 ( 파일 형태 )
+        sessionStorage: 세션이 끊기면 제거 > 브라우저가 종료되면 제거 (메모리에 유지)
+
+        setItem(key value)
+        key     : value를 구별하기 위한 키
+        value   : storag 저장할 데이터
+        */
+
+        localStorage.setItem('todos', JSON.stringify(todos));
         
         
     </script>

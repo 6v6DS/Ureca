@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 프로미스를 정의하는 함수 작성 방식
+        function getData(type){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){ //비동기처럼 보이기 위해 .. 없어도 됨
+                    if(type){
+                        resolve(); // 200 ok면 resolve 호출
+                    }else{
+                        reject(); // 아니면 reject
+                    }
+                }, 1000)
+            })
+        }
+
+        console.log(1);
+        //프로미스를 리턴하는 함수를 사용하는 방식
+        getData(1) //값을 줌 0인 경우 에러, 1이면 성공.
+        .then(function(){       //성공인 경우 ==> resolve 함수를 인자로
+            console.log('success!!');
+            console.log(2);
+        })        
+        .catch(function(){      //실패인 경우 ==> reject 함수를 인자로
+            console.log('error...');
+        })                
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
