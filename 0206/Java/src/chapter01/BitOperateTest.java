@@ -54,10 +54,19 @@ public class BitOperateTest{
         int checkbit = 0b10000000; // a에 1을 쓴 것.
 
         //^(xor)    : 두 비트가 같으면 0 다르면 1 ==> 토글 효과
-        int pw = 0b11001101;
-        int salt = 0b10110011;
-        int encoding = pw ^ salt;
+        int pw =   0b11001101;
+        int salt = 0b10110011; //01111110
+        int encoding = pw ^ salt; // 11001101
         System.out.println(Integer.toBinaryString(encoding));
         System.out.println(Integer.toBinaryString(encoding^salt));
+
+        //~ 비트 반전
+        int p = 0b1100;
+        System.out.println(~p);
+        System.out.println(Integer.toBinaryString(~p));  //1의 보수 0011
+
+        int p2 = -12;
+        System.out.println(Integer.toBinaryString(p2)); //2의 보수 0100
+        System.out.println(Integer.toBinaryString(~p2)); //1011
     }
 }

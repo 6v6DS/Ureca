@@ -17,5 +17,4 @@ function solution(input){
 	let B = Number(input[1]);
 
 	return A + B;
-
 }

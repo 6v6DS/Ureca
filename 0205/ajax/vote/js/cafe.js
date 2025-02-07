@@ -72,6 +72,39 @@ function programmingBook(data){
   document.getElementById('pcontent').innerHTML = content;
 }
 
+// 인기글 정보 받아오기
+fetch('./assets/data/board.json')
+.then(reponse => reponse.json())
+.then(data => {
+  console.log(data);
+  popularData(data);
+})
+
+function popularData(data){
+  let content = `<h3>[ 인기글 ]</h3>
+  <table class="table table_striped">
+              <thead>
+                <tr>
+                  <th class="title">제목</th>
+                  <th>작성자</th>
+                  <th>조회수</th>
+                </tr>
+              </thead>
+          <tbody>`
+  data.forEach(item => {
+    content += `
+                <tr>
+                  <td>${item.title}</td>
+                  <td>${item.id}</td>
+                  <td>${item.hit}</td>
+                </tr>
+              `
+  });
+            
+  content += `</tbody>
+            </table>`;
+  document.querySelector('.article_popular').innerHTML = content;
+}
 
 /*사용자 인증 처리를 위한 함수 */
 function login() {
