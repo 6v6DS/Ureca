@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todoList</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Web Programming</h1>
@@ -13,25 +15,32 @@
         <hr>
         <div>
             <ul id="newarr">
-                <li>추가</li>
-                <li>추가</li>
-                <li>추가</li>
+                <li class="list">추가</li>
+                <li class="list">추가</li>
+                <li class="list">추가</li>
             </ul>
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function () {
             const submit = document.querySelector('#submit');
             const newarr = document.querySelector("#newarr");
-       
+
+            let NewList = [];
+
             submit.addEventListener('click', (e) => {
                 // console.log(textContent);
                 const arr = document.getElementById('arr').value;
                 console.log(arr);
                 // newarr.classList.add('arr');
-                document.getElementById("newarr").innerText = arr
+                let newlist = `<li>${arr}</li>`
+                document.getElementById("newarr").innerText = arr;
+                $('#newarr').append(newlist);
+                NewList.push({ newlist });
+
             });
         });
     </script>
 </body>
+
 </html>
