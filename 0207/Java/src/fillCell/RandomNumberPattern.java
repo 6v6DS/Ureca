@@ -1,6 +1,8 @@
 package fillCell;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.StringReader;
 import java.util.Scanner;
 
 /**
@@ -32,8 +34,10 @@ import java.util.Scanner;
 public class RandomNumberPattern {
 	static int N, Answer1, Answer2;
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("res/RandomNumberPattern.txt"));
-		Scanner sc = new Scanner(System.in);
+		// System.setIn(new FileInputStream("res/RandomNumberPattern.txt"));
+		BufferedReader br = new BufferedReader(new StringReader(input));
+		Scanner sc = new Scanner(br);
+
 		int T = sc.nextInt();
 		for (int test_case = 1; test_case <=T; test_case++) {
 			N = sc.nextInt();
@@ -45,9 +49,60 @@ public class RandomNumberPattern {
 			}
 			Answer1 = 0;
 			Answer2 = 0;
+
+			// 팔방 검사. 상 하 좌 우 좌상 우상 좌하 우하
+			int[] dr = {-1, 1, 0, 0, -1, -1, 1, 1};
+			int[] dc = {0, 0, -1, 1, -1, 1, -1, 1};
+
+			// 다음 좌표
+			int nr= 0 , nc = 0, d = 8;
+			
+			for(int r = 0; r < N; r++){
+				for(int c = 0; c < N; c++){
+					if(matrix[r][c] > matrix[r-1][c-1] && matrix[r][c] > matrix[r+1][c+1]){
+						for(int i = 0; i < d; i++){
+							nr = r + dr[i];
+							nc = c + dc[i];
+							//경계 검사
+							if(nr > -1 && nr < N && nc > -1 && nc < N && matrix[nr][nc] > matrix[r-1][c-1] && matrix[nr][nc] > matrix[r+1][c-+1]){
+								Answer1++;
+							}
+						}
+					}
+					if(matrix[r][c] < matrix[r-1][c-1] && matrix[r][c] < matrix[r+1][c+1]){
+						for(int i = 0; i < d; i++){
+							nr = r + dr[i];
+							nc = c + dc[i];
+							//경계 검사
+							if(nr > -1 && nr < N && nc > -1 && nc < N && matrix[nr][nc] > matrix[r-1][c-1] && matrix[nr][nc] > matrix[r+1][c-+1]){
+								Answer1++;
+							}
+						}
+					}
+				}
+			}
+			
+
 			System.out.println("#"+test_case+" "+Answer1+" "+Answer2);
 		}
 	}
+	static String input = "2 \r\n" + //
+				"9\r\n" + //
+				"9 5 4 4 6 1 3 6 0\r\n" + //
+				"7 5 7 9 2 8 3 8 2\r\n" + //
+				"0 4 1 6 0 1 4 3 9 \r\n" + //
+				"2 8 0 1 7 0 8 3 3\r\n" + //
+				"3 4 9 5 5 6 6 1 6\r\n" + //
+				"2 3 7 5 1 3 3 5 7\r\n" + //
+				"3 4 6 5 8 4 5 5 5\r\n" + //
+				"8 7 3 7 7 5 3 6 3\r\n" + //
+				"9 9 8 4 2 5 8 2 0\r\n" + //
+				"5 \r\n" + //
+				"7 1 0 0 8\r\n" + //
+				"4 3 6 4 1\r\n" + //
+				"2 2 9 0 9\r\n" + //
+				"4 8 5 6 7\r\n" + //
+				"0 9 1 6 10";
 }
 
 
