@@ -73,7 +73,7 @@ public class BaseStation1 {
 						//1.3 기지국의 상하좌우의 좌표를 얻고 경계내에 있는지 검사
 						for(int i = 0; i < d; i++){	//사방(상하좌우) 처리
 							nr = r+dr[i];
-							nc = c+dc[i];			// c + dc[i] 인 것 확실히 보기
+							nc = c+dc[i];		
 							//경계 안에 있고							집이라면 ==> 기지국은 제외해야 함
 							if(nr > -1 && nr < N && nc > -1 && nc < N && map[nr][nc] == 'H'){
 								//1.4 상하좌우에 커버됐다고 표시한다. 

@@ -57,28 +57,47 @@ public class RandomNumberPattern {
 			// 다음 좌표
 			int nr= 0 , nc = 0, d = 8;
 			
-			for(int r = 0; r < N; r++){
-				for(int c = 0; c < N; c++){
-					if(matrix[r][c] > matrix[r-1][c-1] && matrix[r][c] > matrix[r+1][c+1]){
-						for(int i = 0; i < d; i++){
-							nr = r + dr[i];
-							nc = c + dc[i];
-							//경계 검사
-							if(nr > -1 && nr < N && nc > -1 && nc < N && matrix[nr][nc] > matrix[r-1][c-1] && matrix[nr][nc] > matrix[r+1][c-+1]){
-								Answer1++;
-							}
-						}
+			// 경계 검사를 할 필요가 없음. (경계를 벗어날 일이 없음) -> 따라서 1부터 시작, N-1;
+			// N + 2을 사용하는 방법도 있음. (padding을 주는 효과)
+			for(int r = 1; r < N - 1; r++){ 		//행
+				for(int c = 1; c < N - 1; c++){	//열
+
+					int big_count = 0;
+					
+					int small_count = 0;
+
+					for(int i = 0; i < d; i++){
+						nr = r+dr[i];
+						nc = c+dc[i];
+						if(matrix[nr][nc] < matrix[r][c]) big_count++;
+						if(matrix[nr][nc] > matrix[r][c]) small_count++;
 					}
-					if(matrix[r][c] < matrix[r-1][c-1] && matrix[r][c] < matrix[r+1][c+1]){
-						for(int i = 0; i < d; i++){
-							nr = r + dr[i];
-							nc = c + dc[i];
-							//경계 검사
-							if(nr > -1 && nr < N && nc > -1 && nc < N && matrix[nr][nc] > matrix[r-1][c-1] && matrix[nr][nc] > matrix[r+1][c-+1]){
-								Answer1++;
-							}
-						}
-					}
+					//큰수라면 
+					if(big_count == 8) Answer1++;
+					//작은수라면
+					if(small_count == 8) Answer2++;
+					// if(matrix[r][c] > matrix[r-1][c-1]){
+					// 	for(int i = 0; i < d; i++){
+					// 		nr = r + dr[i];
+					// 		nc = c + dc[i];
+					// 		Answer1++;
+							//경계 검사 -> 하지 않음. 0이나 N-1 위치의 사방은 경계 밖이므로
+							// 검사해야 되지만 1~N-2 까지만 탐색하므로 경계를 벗어날 일이 없다.
+							// if(nr > -1 && nr < N && nc > -1 && nc < N && matrix[nr][nc] > matrix[r-1][c-1]){
+							// 	Answer1--;
+							// }
+					// 	}
+					// }
+					// if(matrix[r][c] < matrix[r-1][c-1]){
+					// 	for(int i = 0; i < d; i++){
+					// 		nr = r + dr[i];
+					// 		nc = c + dc[i];
+					// 		//경계 검사
+					// 		if(nr > -1 && nr < N && nc > -1 && nc < N && matrix[nr][nc] < matrix[r-1][c-1]){
+					// 			Answer2++;
+					// 		}
+					// 	}
+					// }
 				}
 			}
 			
