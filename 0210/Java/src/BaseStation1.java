@@ -53,7 +53,7 @@ public class BaseStation1 {
 					map[i][j] = st.nextToken().charAt(0); // 문자열을 char로 바꾸어 주어야 함.
 				}
 			}
-
+			
 
 			// 상하좌우를 위한 배열 선언
 			// 상하좌우 방향으로 좌표 값 처리 하기 위한 변수
