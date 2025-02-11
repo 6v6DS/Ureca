@@ -20,14 +20,53 @@ import java.util.Comparator;
 public class ComparableTest {
 	public static void main(String[] args) {
 		Employee[] emps = { 
-				new Employee("1", "1", 5),
+				new Employee("2", "1", 5),
 				new Employee("1", "1", 1),
-				new Employee("1", "1", 2),	
+				new Employee("3", "1", 2),	
 		};
 		
 		Arrays.sort(emps);
 		System.out.println(Arrays.toString(emps));
 		
-	}
+		int [] array = {5,2,4,1,7};
+		// 기본 타입의 배열을 정렬할 때 Comparator를 인자로 전달하지 않아도 자동으로 오름 차순으로 정렬
+		// Arrays.sort(array, new Comparator<T>() {
+			
+		// });
+		System.out.println(Arrays.toString(array));
+		/*
+		 * 기본 타입을 내림 차순으로 정렬
+		 * 	- Comparator를 두번째 인자로 전달해야 한다.
+		 * 		==> Comparator의 compare함수는 객체만 전달 받는다.
+		 * 			==> Wrapper를 이용해야 한다.
+		 */
+		Integer[] array2 = {5, 1, 7, 2};	// 선언을 int가 아니라 Integer[]
+		Arrays.sort(array2, new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2){
+				//내림차순
+				return o2 - o1;
+			}
+		});
+		System.out.println(Arrays.toString(array2));
+
+		Arrays.sort(emps, new Comparator<Employee>() {
+			/*
+			 * compare(arg1, arg2)
+			 * arg1 : 기준 데이터
+			 * arg2 : 비교 데이터
+			 */
+			public int compare(Employee args1, Employee args2){
+				// 오름차순
+				String empno = arg1.getEmpno();
+				return empno.compareTo(args2.getEmpno());			// 첫번째에서 두번째를 빼준 느낌
+
+				// 내림차순
+				// String empno = arg2.getEmpno();
+				// return empno.compareTo(args1.getEmpno());		// 두번째에서 첫번째를 빼준 느낌
+			};
+		});
+		System.out.println(Arrays.toString(emps));
+	};
 
 }

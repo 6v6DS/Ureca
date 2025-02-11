@@ -24,9 +24,20 @@ public class Employee implements Comparable<Employee>{
 	 */
 	public int compareTo(Employee o) {		// 이 method를 반드시 정의해주어야 한다.
 		//salary를 기준으로 오름차순으로 정렬하고 싶다면
-		if(salary>o.salary) return 1;
+		// if(salary>o.salary) return 1;
+		// else if(salary==o.salary) return 0;
+		// else return -1;
+
+		// return salary - o.salary;				// 간단하게 오름차순 정렬 가능
+		//return Integer.compare(salary, o.salary);	// 같은 의미 (범위를 넘어갈 수 있으니 compare 사용)
+		
+		//내림차순 정렬
+		if(salary>o.salary) return -1;
 		else if(salary==o.salary) return 0;
-		else return -1;
+		else return 1;
+
+		// return o.salary - salary;				// 간단하게 오름차순 정렬 가능
+		//return Integer.compare(o.salary, salary);	// 같은 의미 (범위를 넘어갈 수 있으니 compare 사용)
 	}
 	public String getEmpno() {
 		return empno;

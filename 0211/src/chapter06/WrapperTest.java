@@ -10,6 +10,7 @@ package chapter06;
  * long		=> Long
  * float	=> Float
  * double	=> Double  
+ * boolean  => Boolean
  */
 public class WrapperTest {
 
@@ -27,7 +28,21 @@ public class WrapperTest {
 		 * 인자로 전달된 문자가 해당 타입인지 검사하는 함수 
 		 * ex) Character.isDigit('1')  
 		 */
+		System.out.println(Character.isDigit('1'));
+		System.out.println(Character.isDigit('A'));
 		
+		int d = 'a' - '0';
+		if(d > -1 && d < 10){
+			System.out.println("숫자입니다.");
+		}else{
+			System.out.println(d + " 숫자가 아닙니다.");
+		}
+
+		//auto boxing : 기본 타입(primitive)를 자동으로 wrapper로 변경해줌
+		Integer inum = 100;
+
+		//auto UnBoxing : wrapper를 자동으로 primitive로 변경
+		int num = inum;
 	}
 
 }
