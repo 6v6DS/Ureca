@@ -14,6 +14,7 @@ package recursive;
 public class RecursiveCallTest {
     static int N = 10;
 
+    // 기저 조건에서 재귀가 중단
     //Bottom -> UP
     // public static int sum1(int i){
     //     // 기저조건 : 재귀함수를 중단하는 조건
@@ -27,20 +28,45 @@ public class RecursiveCallTest {
         print(num + 1);
     }
 
-    public static void main(String[] args) {
+    public static void print2(int num){
+        if(num == -1) return;
+        System.out.println(num + " ");
+        print2(num - 1);
+    }
 
-        for(int i = 0; i <= N; i++){
-            System.out.println(i);
+    //특정 조건을 만족할 때 재귀가 진행되는 구조
+    //bottom -> up
+    public static void print3(int num){
+        if(num <= N){
+            System.out.println(num + " ");
+            print3(num+1);
         }
+    }
+    //top -> down
+    public static void print4(int num){
+        if(num > -1){
+            System.out.println(num + " ");
+            print4(num-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        // print3(0);
+        print4(N);
         System.out.println();
-        print(0);
+
+        // for(int i = 0; i <= N; i++){
+        //     System.out.println(i);
+        // }
+        System.out.println();
+        // print(0);
         System.out.println();
 
         for(int i = 10; i > -1; i--){
             System.out.println(i+" ");
         }
         System.out.println();
-        print2(N);
+        // print2(N);
 
         // int sum = 0;
         // for(int i = 1; i <= N; i++){
@@ -51,9 +77,5 @@ public class RecursiveCallTest {
         // System.out.println("for: " + sum);
         // System.out.println(sum1(1));
     }
-    public static void print2(int num){
-        if(num == -1) return;
-        System.out.println(num + " ");
-        print2(num - 1);
-    }
+
 }

@@ -26,22 +26,40 @@ public class RecursiveCallTest2 {
         return n + sum2(n-1);
     }
 
+    // 특정 조건일 때 재귀 유도
+    //Bottom -> Up
+    public static int sum3(int n){
+        if(n < N){
+            return n + sum3(n+1);
+        }
+        return n;
+    }
+
+    //Top -> Down
+    public static int sum4(int n){
+        if(n > 0){
+            return n + sum4(n-1);
+        }
+        return n;
+    }
+
     public static void main(String[] args) {
         int sum = 0;                    // 따지고 보면 이 sum이 결과인 것임.
         for(int i = 1; i <= N; i++){
             sum += i;
         }
-        System.out.println(sum);
+        // System.out.println(sum);
         System.out.println(sum1(1));
 
         int sum2 = 0;
         for(int i = N; i > 0; i--){
             sum2 += i;
         }
-        System.out.println(sum2);
+        // System.out.println(sum2);
         System.out.println(sum2(N));
 
-
+        System.out.println(sum3(1));
+        System.out.println(sum4(N));
     }
     
 }
