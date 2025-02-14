@@ -9,12 +9,12 @@
 // rl.on('line', (line) => {
 //     input.push(line.trim().split(" ").map((e) => Number(e)));
 // }).on('close', () => {
-//     console.log(solution(input));
+//     console.log(solution(input).join(" "));
 //     process.exit(0);
 // })
 
 let input = [[5], [6, 9, 5, 7, 4]];
-
+// let input = [[8], [8,7,6,5,4,3,2,1]];
 console.log(solution(input));
 
 function solution(input){
@@ -22,21 +22,22 @@ function solution(input){
     let tops = input[1];
 
     let stack = [];
-    let count = [];
-
-    tops.reverse();
-    console.log(tops);
+    let result = [];
 
     stack.push(tops[0]);
-
-    for(let i = 1; i < tops.length + 1; i++){
+    result.push(0);
+    for(let i = 1; i < tops.length; i++){
         while(stack[stack.length - 1] <= tops[i]){
             stack.pop();
-        }
-        count.push(stack.length);
+        } 
+        // console.log(stack); 
+        // console.log(i); 
+        // console.log(tops[i]);   
+        result.push(tops.indexOf(stack[stack.length-1]) + 1)
+        let a = stack[stack.length - 1];
+        console.log(a);
         stack.push(tops[i]);
     }
 
-    console.log(count);
-
+    return result;
 }
