@@ -19,22 +19,23 @@ public class CombinationTest1 {
 	static int[] input;		//입력된 N개의 데이타
 	static int count;
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		n = scan.nextInt();
-		r = scan.nextInt();		
+		// Scanner scan = new Scanner(System.in);
+		// n = scan.nextInt();
+		// r = scan.nextInt();		
+		// input 	= new int [n];
+		// numbers	= new int [r];
+		// for (int i = 0; i < n; i++) {
+		// 	input[i] = scan.nextInt();
+		// }
+		
+		n = 27;
+		r = 14;
 		input 	= new int [n];
 		numbers	= new int [r];
 		for (int i = 0; i < n; i++) {
-			input[i] = scan.nextInt();
+			input[i]= i+1;
 		}
-		
-//		n = 27;
-//		r = 14;
-//		input 	= new int [n];
-//		numbers	= new int [r];
-//		for (int i = 0; i < n; i++) {
-//			input[i]= i+1;
-//		}
+
 		long start = System.currentTimeMillis();
 		combi(0, 0);
 		long end = System.currentTimeMillis();
