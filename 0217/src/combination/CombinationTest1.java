@@ -7,6 +7,9 @@ import java.util.Scanner;
  * 26C13		=> 80ms   	위험	조합수 : 10,400,600  ==> 백트레킹을 시도
  * 27C14		=> 200ms	위험	==> 백트레킹을 시도	
  * 30C15  		=> 1.2초 컷  안됨 1억 5천   
+ * 
+ * 조합
+ * 	서로 다른 n개의 원소에서 r개를 중복 없이, 순서를 고려하지 않고 선택
  */
 public class CombinationTest1 {
 	static int testcase;
@@ -43,7 +46,16 @@ public class CombinationTest1 {
 	 * @param start 뽑을 수의 index 위치
 	 */
 	private static void combi(int depth, int start) {
-	
+		if(depth == r) {	//모두 뽑은 상황
+			testcase++;
+			//조합이 완성됐으므로 필요한 코드를 작성
+			System.out.println(Arrays.toString(numbers));
+			return;
+		} 
+		for (int i = start; i < n; i++) {
+			numbers[depth] = input[i];
+			combi(depth+1, i+1);
+		}
 		
 	}
 }

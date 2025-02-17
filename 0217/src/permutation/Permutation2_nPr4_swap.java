@@ -33,6 +33,7 @@ public class Permutation2_nPr4_swap {
 		for (int i = depth; i < N; i++) {
 			swap(i, depth);
 			permutation(depth + 1);
+			// 다음 순열을 만들기 위해서 원복하기
 			swap(i, depth);		//swap(depth, i)와 동일한 의미.
 		}
 	}
@@ -46,7 +47,7 @@ public class Permutation2_nPr4_swap {
 		// input = new int[] {1,2,3,4,5,6,7,8,9,10,11};
 		input = new int[] {1,2,3};
 		N = input.length;
-		R = input.length;
+		R = 2;
 		long start = System.currentTimeMillis();
 		permutation(0);
 		long end = System.currentTimeMillis();
