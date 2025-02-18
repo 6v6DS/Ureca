@@ -9,7 +9,9 @@ let lines = [];
 rl.on('line', (line) => {
     lines.push(Number(line));
 }).on('close', () => {
+    console.time();
     console.log(solution(lines));
+    console.timeEnd();
     process.exit(0);
 });
 
