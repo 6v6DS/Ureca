@@ -35,12 +35,12 @@ public class CombinationTest1 {
 		for (int i = 0; i < n; i++) {
 			input[i]= i+1;
 		}
-
 		long start = System.currentTimeMillis();
 		combi(0, 0);
 		long end = System.currentTimeMillis();
 		System.out.printf("%dC%d 조합의 수:%d  time:%d  count:%d <= %d%n",n,r,testcase, end-start,count, testcase*r);
 	}
+	
 	/**
 	 * 
 	 * @param depth   뽑은 수를 저장할 index 위치

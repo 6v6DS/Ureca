@@ -42,7 +42,17 @@ public class CombinationTest2 {
 	 * @param r	      선택한 데이타 개수, index
 	 */
 	private static void combi(int depth, int r) {
-		
+		if(r==R){
+			// System.out.println(Arrays.toString(numbers));
+			return;
+		}
+		if(depth >= N) return;
+		//현재 원소를 선택
+		numbers[r] = input[depth];
+		combi(depth+1, r+1);
+
+		//현재 원소를 비선택
+		combi(depth+1, r);
 	}
 }
 
