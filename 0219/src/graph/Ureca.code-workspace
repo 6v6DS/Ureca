@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Ureca",
+			"path": "../../.."
+		},
+		{
+			"name": "0219",
+			"path": "../../../../Desktop/Uplus_git/UPlusFrontEnd2/lecture/02_Algo/강의자료/0219"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
