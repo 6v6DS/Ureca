@@ -1,3 +1,5 @@
+// 백준 4344번 문제: 평균은 넘겠지
+
 // const fs = require('fs');
 
 // const filePath = process.platform == 'linux' ? '/dev/stdin' :__dirname+'\\input.txt';

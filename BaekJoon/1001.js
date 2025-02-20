@@ -1,3 +1,5 @@
+// 백준 1001번 문제: A - B
+
 const readline = require('readline');
 
 const rl = readline.createInterface({

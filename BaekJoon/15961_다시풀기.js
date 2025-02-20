@@ -1,3 +1,5 @@
+//백준 15961번 문제: 회전 초밥
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

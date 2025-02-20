@@ -1,3 +1,5 @@
+// 백준 15649번 문제: N과 M(1)
+
 // const readline = require('readline');
 // const rl = readline.createInterface({
 //     input: process.stdin,

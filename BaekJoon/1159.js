@@ -1,4 +1,4 @@
-// 백준 2961번: 농구 경기
+// 백준 1159번: 농구 경기
 
 const readline = require('readline');
 const rl = readline.createInterface({

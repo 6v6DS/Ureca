@@ -1,3 +1,5 @@
+// 백준 3040번 문제: 백설공주와 일곱 난쟁이
+
 // const readline = require('readline');
 // const rl = readline.createInterface({
 //     input: process.stdin,

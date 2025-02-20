@@ -1,3 +1,5 @@
+//백준 10998번 문제: A x B
+
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,

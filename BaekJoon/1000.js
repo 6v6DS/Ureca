@@ -1,3 +1,4 @@
+//백준 1000번 문제: A+B
 // Run by Node.js
 const readline = require('readline');
 

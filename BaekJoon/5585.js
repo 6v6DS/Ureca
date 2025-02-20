@@ -1,4 +1,4 @@
-// 백준 2839번 문제: 설탕 배달
+//백준 5585번 문제: 거스름돈
 
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -13,18 +13,17 @@ rl.on('line', (line) => {
 }).on('close', () => {
     console.log(solution(lines));
     process.exit(0);
-})
+});
 
 function solution(lines){
-    let count = 0;
+    let coins = [500, 100, 50, 10, 5, 1];
+    let money = 1000 - lines;
 
-    while(lines >= 0){
-        if(lines % 5 == 0){
-            count += lines / 5;
-            return count;
-        }
-        lines -= 3;
-        count++;
+    let count = 0;
+    for(let coin of coins){
+        count += Math.floor(money / coin);
+        money %= coin;
     }
-    return -1;
+
+    return count;
 }

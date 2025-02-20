@@ -1,3 +1,5 @@
+// 백준 1062번 문제: 가르침
+
 // const readline = require('readline');
 // const rl = readline.createInterface({
 //     input: process.stdin,

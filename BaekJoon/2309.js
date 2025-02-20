@@ -1,3 +1,5 @@
+// 백준 2309번 문제: 일곱 난쟁이
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

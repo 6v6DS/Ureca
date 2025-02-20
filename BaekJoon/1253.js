@@ -1,3 +1,5 @@
+// 백준 1253번 문제: 좋다
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

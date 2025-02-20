@@ -1,3 +1,5 @@
+// 백준 2493번 문제: 탑
+
 // const readline = require('readline');
 // const rl = readline.createInterface({
 //     input: process.stdin,
