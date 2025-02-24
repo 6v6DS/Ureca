@@ -69,3 +69,4 @@ function solution(input){
 
     return visited[N-1][M-1];
 }
+
