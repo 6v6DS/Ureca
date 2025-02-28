@@ -13,9 +13,9 @@ show variables where variable_name like '%low%';
   - 형식]    (숫자는 실행 순서)
   4. select [distinct]   *|컬럼명 [as alias] or 간단한 연산 or 함수 호출
   1. from   테이블명 [alias],..						mySql		오라클, DB2, ms-sql
-  2. [where  조건]								 	        x				x
-  3. [group by 컬럼명, ..	[having 조건]]    o			x		
-  5. [order by 컬럼명 [asc|desc]], ...]			o				o
+  2. [where  조건]								 	   x				x
+  3. [group by 컬럼명, ..	[having 조건]]   			   o			    x		
+  5. [order by 컬럼명 [asc|desc]], ...]			       o				o
   
 */
 
@@ -201,3 +201,14 @@ order by price desc;
 select	*
 from	goods
 order by cno desc, brand asc;		-- asc 빼고도 가능
+
+
+-- alias를 사용하면 error. 
+-- select empno as employeeNo, ename as employeeName, sal as salary
+-- from   emp
+-- where  employeeNo > 7500;			-- employeeNo는 alias 라서 where에서 사용하면 error 발생
+
+select empno as employeeNo, ename as employeeName, sal as salary
+from   emp
+where  empno > 7500
+order by employeeNo;
