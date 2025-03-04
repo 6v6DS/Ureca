@@ -31,6 +31,8 @@ group by deptno;
 
 
 -- 상품별 수량이 10개 초과인 제품에 대해 상품별 총 판매 수량 조회
+select * from goods group by cno;
+
 
 -- 건당 판매 수량이 2개 이상인 판매 건수를 상품별 조회
 
