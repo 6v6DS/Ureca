@@ -35,8 +35,10 @@ select empno, ename, sal, deptno,
        as loc
 from   emp e;
 
--- 상품 번호, 상품명, 가격, 제조사, 카테고리번호, 카테고리명을 조회
- 
+-- 상품 번호, 상품명, 가격, 제조사, 카테고리번호, 카테고리명을 조회 
+ select gno, brand, price, maker, cno, 
+		(select name from category c where g.cno = c.cno) as caName
+from	goods g;
  
  /*
    where절 sub Query
@@ -208,7 +210,9 @@ where	sal <= smallSal and e.deptno = s.deptno;
 --
 
 -- 사원번호가 7369인 사원의 업무와 같은 업무를 하는 사원의 모든 조회
-
+select *
+from emp e, (select job from emp where empno = 7369) s
+where e.job = s.job;
  
 -- 평균 급여보다 많이 받는 사원의 모든 정보를 조회
 select	*
