@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script>
+      const user1 = { id: "ureca1" };
+      const user2 = { id: "ureca2" };
+
+      const users = [user1, user2];
+
+      /*
+  객체를 변수에 할당할때  기존에는 hashcode가 전달이되어
+  참조변수가 되어 본객체 변하면 참조하는 객체도 변경이된다.
+  */
+      const copy1 = users;
+
+      user1.id = "ureca";
+      //console.log로 객체를 출력시 객체의 현재 상태가 출력되지 않고 화면에 표시되기전 최종 변경된 객체가 화면에 출력된다.
+      console.log(copy1);
+
+      // 이 위의 방법들로 하면 안됨.. 밑의 방식으로 해야함.
+
+      /* Spread Syntax
+        - 객체의 내용을 복사한 새로운 객체가 생성된다.
+        - 기존객체에 변경을 해도 반영되지 않는다.
+        - 형식]  ...변수명
+       */
+      const copy2 = [...users];
+      console.log("users===copy1", users === copy1);
+      console.log("users===copy2", users === copy2);
+      users.push({ id: "ureca3" });
+      console.log(copy1);
+      console.log(copy2);
+      // 이렇게 복제하고 변경시키는 방법을 사용.
+    </script>
+  </head>
+  <body></body>
+</html>
