@@ -1,9 +1,9 @@
 import "./App.css";
-import IterationSample3 from "./IterationSample3";
+import OneWayBind2 from "./OneWayBind2";
 function App() {
   return (
     <div className="App">
-      <IterationSample3 />
+      <OneWayBind2 />
     </div>
   );
 }
