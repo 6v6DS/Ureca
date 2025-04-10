@@ -10,6 +10,9 @@
 
 형식] @use "url";
 사용형식] 파일이름.$변수명
+
+형식] @use "url" as alas;
+사용형식]  alas.$변수명
 */
 
 @use "base";
