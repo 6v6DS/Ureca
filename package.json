@@ -16,5 +16,9 @@
   },
   "homepage": "https://github.com/6v6DS/Ureca#readme",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2"
+  }
 }
