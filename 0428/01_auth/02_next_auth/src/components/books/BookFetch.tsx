@@ -1,12 +1,11 @@
 import { Book } from "@/types/book";
-import { localAxios } from "@/utils/http-commons";
+import axios from "@/utils/http-commons";
 import styles from "./books.module.scss";
 export default async function BooksFech() {
-  const axios = localAxios();
   const getBook = async () => {
     console.log("fetching book......", Date.now());
     // await new Promise((resolve) => setTimeout(resolve, 3000));
-    const response = await axios.get("/book");
+    const response = await axios.get("/book/979-11-57");
     // throw new Error("Someting wrong!!!!");
     console.log(response.data);
     return response.data;
