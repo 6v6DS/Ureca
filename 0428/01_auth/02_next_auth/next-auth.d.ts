@@ -9,11 +9,9 @@ declare module "next-auth" {
   }
 
   interface User extends DefaultUser {
-    password: string;
     accessToken?: string;
     refreshToken?: string;
     id?: string;
-    expiresAt?: number;
   }
 }
 //////////// TODO 2. 응답 받은 JWT를 위한 type 선언하기

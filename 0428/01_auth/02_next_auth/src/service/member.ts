@@ -18,3 +18,9 @@ export const removeMember = async (id: string): Promise<ResMember> => {
   const { data } = await axios.delete(`/member/${id}`);
   return data;
 };
+
+export const logoutMember = async (id: string) => {
+  console.log("service>member>logoutMember.......id:", id);
+  const { data } = await axios.get(`/member/logout/${id}`);
+  return data;
+};
