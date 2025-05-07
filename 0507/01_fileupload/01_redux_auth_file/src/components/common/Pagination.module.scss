@@ -1,0 +1,42 @@
+@use "@/style/base" as base;
+.container {
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+
+  .page-item {
+    margin: 0 4px;
+
+    .page-link {
+      position: relative;
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: #007bff;
+      text-decoration: none;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        color: #0056b3;
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+      }
+    }
+
+    &.active .page-link {
+      z-index: 1;
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+      cursor: default;
+    }
+  }
+}

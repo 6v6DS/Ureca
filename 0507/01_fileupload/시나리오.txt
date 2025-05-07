@@ -1,0 +1,4 @@
+1. 업로드할 폴더 생성하기 
+ C:\book\upload\imageUpload
+ 
+2. pom.xml에 라이브러리 추가 

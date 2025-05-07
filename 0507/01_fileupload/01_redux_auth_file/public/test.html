@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const handleConfirm = () => {
+        let username = escape(document.getElementById("username").value);
+        console.log("username:", username);
+      };
+    </script>
+  </head>
+  <body>
+    <form>
+      name : <input type="text" id="username" /><button type="button" onClick="handleConfirm()">
+        확인
+      </button>
+    </form>
+  </body>
+</html>
